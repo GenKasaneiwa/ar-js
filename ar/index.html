@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <title>Sample: AR.js with Image Tracking</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+   <!-- クリック用 -->
+   <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
+   <!-- particle用 -->
+   <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+   <script>
+
+   AFRAME.registerComponent('registerevents', {
+      init: function () {
+         var marker = this.el;
+
+         // マーカーを検出したイベントの登録
+         marker.addEventListener('markerFound', function () {
+            var markerId = marker.id;
+            audio.play(); // 音声再生
+            //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
+         });
+
+         // マーカーを見失ったイベントの登録
+         marker.addEventListener('markerLost', function () {
+            var markerId = marker.id;
+            audio.pause(); // 音声停止
+
+         });
+      }
+   });
+</script>
+</head>
+<body>
+   <div id="loader">
+      <p>
+         Now Loading...<br>
+         Please prepare the marker image and click start button<br />
+         <button id="close">start</button>
+      </p>
+   </div>
+
+   <a-scene
+   vr-mode-ui="enabled: false;"
+   renderer="logarithmicDepthBuffer: true;"
+   embedded
+   arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+   >
+
+   <!-- マーカー指定部分 絶対パスでないといけないので注意。https://carnaux.github.io/NFT-Marker-Creator/ で取ってきたファイルの先頭の名前のみ表記する この子要素に表示オブジェクト入れていく 1000pxじゃないとオブジェクトの座標ずれるので注意-->
+   <a-nft
+   type="nft"
+   url="https://genkasaneiwa.github.io/test/ar/img/marker/bow-market"
+   smooth="true"
+   smoothCount="10"
+   smoothTolerance=".01"
+   smoothThreshold="5"
+   registerevents
+   >
+
+   <!-- z -にすると上に上がる
+   x +にすると右による
+   y -にすると近づく？ -->
+
+   <!-- objファイル 3d -->
+   <!-- <a-entity
+   obj-model="obj: url(https://genkasaneiwa.github.io/test/ar/img/head3d.obj);
+   mtl: url(https://genkasaneiwa.github.io/test/ar/img/head3d.obj.mtl)"
+   position="145 -10 -200"
+   rotation="270 0 0"
+   ></a-entity> -->
+
+   <!-- particle -->
+   <!-- <a-entity position="145 -10 -200" particle-system="
+                texture: url(https://genkasaneiwa.github.io/test/ar/img/star.png);
+                color: #FF0000, #FFFF00;
+                size: 1, 0;
+                velocityValue: 0.001 0.001 0.001;
+                velocitySpread: 0.5 0 0.5;
+                accelerationValue: 0.001 0.001 0.001;
+                accelerationSpread: 0.001 0.001 0.001;
+                rotationAngle: 0;
+                blending: 1;
+                particleCount: 200;
+                maxAge: 5; ">
+   </a-entity> -->
+
+   <!-- 画像 -->
+   <!-- <a-link href="https://www.bowmarketsomerville.com/" title="My Homepage">
+   </a-link> -->
+
+   <a-image
+   src="https://genkasaneiwa.github.io/test/ar/img/bow-market-img.png"
+   width="300"
+   height="300"
+   scale="1 1 1"
+   position="145 -10 -200"
+   rotation="270 0 0"
+   >
+</a-image>
+
+<a-box position="145 -10 -200" wireframe="true" link="href: https://qiita.com/nonkapibara; title: bowmarket; image: #heart"></a-box>
+
+
+</a-nft>
+<a-entity camera></a-entity>
+</a-scene>
+
+<audio id="audio" class="audio" src="https://genkasaneiwa.github.io/test/ar/mp3/sample.mp3" autoplay="autoplay"></audio>
+<script>
+   //safariのaudio/videoミュート対策
+   var audio = document.querySelector('#audio');
+   var button = document.querySelector('#close');
+   var modal = document.querySelector('#loader');
+
+   button.addEventListener('touchstart', () => {
+      audio.muted = true; // ミュート有効
+      audio.play(); // 動画再生
+      audio.pause(); // 動画停止
+      audio.muted = false; // ミュート無効
+      audio.currentTime = 0; // 開始秒数を戻す
+      modal.style.display = 'none'; //modal非表示
+   });
+
+</script>
+
+<style>
+body {
+   font-family: helvetica, arial, sans-serif;
+   margin: 0;
+   overflow: hidden;
+}
+#loader {
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, 0.8);
+   z-index: 9999;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#loader p {
+   text-align: center;
+   font-size: 1.25em;
+   color: white;
+}
+</style>
+
+
+
+</body>
+</html>
