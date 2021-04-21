@@ -48,7 +48,9 @@
             alt="marker"
             class="marker-img"
          />
-         <p>Please hold the camera up so that the image overlaps the marker.</p>
+         <p class="loader-para">
+            Please hold the camera up so that the image overlaps the marker.
+         </p>
       </div>
 
       <a-scene
@@ -151,22 +153,21 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-         }
-         #loader p {
-            text-align: center;
-            font-size: 15px;
-            color: white;
          }
 
          .target-img {
             width: 60%;
             display: block;
             margin: 0 0 50px 0;
+            opacity: 0.5;
+         }
+
+         .loader-para {
+            text-align: center;
+            font-size: 15px;
+            color: white;
          }
 
          #share {
