@@ -21,18 +21,21 @@
          AFRAME.registerComponent("registerevents", {
             init: function () {
                var marker = this.el;
+               var loader = document.getElementById("loader");
 
                // マーカーを検出したイベントの登録
                marker.addEventListener("markerFound", function () {
                   var markerId = marker.id;
                   audio.play(); // 音声再生
                   //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
+                  loader.style.display = "none";
                });
 
                // マーカーを見失ったイベントの登録
                marker.addEventListener("markerLost", function () {
                   var markerId = marker.id;
                   audio.pause(); // 音声停止
+                  loader.style.display = "block";
                });
             },
          });
@@ -40,11 +43,12 @@
    </head>
    <body>
       <div id="loader">
-         <p>
-            Now Loading...<br />
-            Please prepare the marker image and click start button!<br />
-            <button id="close">start</button>
-         </p>
+         <img
+            src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg"
+            alt="marker"
+            class="marker-img"
+         />
+         <p>Please hold the camera up so that the image overlaps the marker.</p>
       </div>
 
       <a-scene
@@ -138,6 +142,8 @@
             font-family: helvetica, arial, sans-serif;
             margin: 0;
             overflow: hidden;
+            width: 100%;
+            height: 100vh;
          }
          #loader {
             height: 100%;
@@ -153,8 +159,14 @@
          }
          #loader p {
             text-align: center;
-            font-size: 1.25em;
+            font-size: 15px;
             color: white;
+         }
+
+         .target-img {
+            width: 60%;
+            display: block;
+            margin: 0 0 50px 0;
          }
 
          #share {
