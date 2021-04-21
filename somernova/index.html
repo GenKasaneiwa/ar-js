@@ -35,7 +35,7 @@
                marker.addEventListener("markerLost", function () {
                   var markerId = marker.id;
                   audio.pause(); // 音声停止
-                  loader.style.display = "block";
+                  loader.style.display = "flex";
                });
             },
          });
@@ -56,8 +56,8 @@
          </div>
          <p class="info-para">
             Created by Mieko Murao<br />
-            <a href="/" target="_blank">Portfolio</a> |
-            <a href="/" target="_blank">Instagram</a>
+            <a href="/" target="_blank" class="info-link">Portfolio</a> |
+            <a href="/" target="_blank" class="info-link">Instagram</a>
          </p>
       </div>
 
@@ -113,7 +113,7 @@
                width="204"
                height="253"
                scale="1 1 1"
-               position="145 300 -200"
+               position="145 100 -200"
                rotation="270 0 0"
             >
             </a-image>
@@ -191,6 +191,10 @@
             left: 0;
             right: 0;
             margin: auto;
+         }
+
+         .info-link {
+            color: white;
          }
 
          #share {
