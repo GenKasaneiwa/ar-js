@@ -8,6 +8,8 @@ html(lang='en')
       meta(http-equiv='Expires' content='0')
       title This is Title for AR test
       meta(name='description' content='This is AR for BOW MARKET TEST')
+      // materialアイコン
+      link(href='//fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
       // ar.js用ファイル
       script(src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js')
       script(src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js')
@@ -52,6 +54,14 @@ html(lang='en')
             a.info-link(href='https://miekomurao.com/' target='_blank') Portfolio
             | |
             a.info-link(href='https://www.instagram.com/mieko.murao/' target='_blank') Instagram
+      .ui
+         img#snap
+         a#delete-photo.disabled(href='#' title='Delete Photo')
+            i.material-icons delete
+         a#take-photo(href='' title='Take Photo')
+            i.material-icons photo_camera
+         a#download-photo.disabled(href='#' download='selfie.png' title='Save Photo' target='_blank')
+            i.material-icons file_download
       a-scene(vr-mode-ui='enabled: false;' renderer='logarithmicDepthBuffer: true;' embedded arjs='trackingMethod: best; sourceType: webcam;debugUIEnabled: false;')
          // マーカー指定部分 絶対パスでないといけないので注意。https://carnaux.github.io/NFT-Marker-Creator/ で取ってきたファイルの先頭の名前のみ表記する この子要素に表示オブジェクト入れていく 1000pxじゃないとオブジェクトの座標ずれるので注意
          a-nft(type='nft' url='https://genkasaneiwa.github.io/ar-js/somernova/img/marker/marker01' smooth='true' smoothCount='10' smoothTolerance='.01' smoothThreshold='5' registerevents)
@@ -179,6 +189,54 @@ html(lang='en')
          #bow-link img {
          width: 100%;
          }
+
+         .ui {
+         position: absolute;
+         z-index: 100;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         height: auto;
+         margin: 0;
+         padding: 10px 15px 30px;
+         text-align: center;
+         box-sizing: border-box;
+         }
+        .ui a {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff;
+            line-height: 100%;
+            color: #303030;
+            margin: 10px 3px;
+            border-radius: 50%;
+            position: relative;
+
+        }
+        .ui a i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .ui a:active {
+            color: #ff0000;
+        }
+
+        #snap {
+            max-width: 100%;
+            height: auto;
+            display: block;;
+            visibility: hidden;
+        }
+        .ui a.disabled {
+            pointer-events: none;
+            color: #cccccc;
+        }
+        #snap.visible {
+            visibility: visible;
+        }
       script.
          //date 取得
          var d = new Date();
@@ -286,3 +344,74 @@ html(lang='en')
          shareButton.style.display = "block"; //shareボタン表示
          linkButton.style.display = "block"; //linkボタン表示
          });
+
+
+         var image = document.querySelector('#snap');
+         var take_photo_btn = document.querySelector('#take-photo');
+         var delete_photo_btn = document.querySelector('#delete-photo');
+         var download_photo_btn = document.querySelector('#download-photo');
+
+         //スナップショットボタン
+         take_photo_btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            var video = document.querySelector('video');
+            var snap = takeSnapshot(video);
+
+            //スナップショット表示.
+            image.setAttribute('src', snap);
+            image.classList.add('visible');
+
+            // 削除ボタンと保存ボタン有効
+            delete_photo_btn.classList.remove("disabled");
+            download_photo_btn.classList.remove("disabled");
+
+            // 保存ボタンにスナップショットを渡す
+            download_photo_btn.href = snap;
+         });
+
+         //削除ボタン
+         delete_photo_btn.addEventListener("click", function(e){
+
+            e.preventDefault();
+
+            // スナップショットを隠す
+            image.setAttribute('src', "");
+            image.classList.remove("visible");
+
+            // 削除ボタンと保存ボタン無効
+            delete_photo_btn.classList.add("disabled");
+            download_photo_btn.classList.add("disabled");
+
+         });
+
+         //スナップショットを撮る
+         function takeSnapshot(video) {
+            var resizedCanvas = document.createElement("canvas");
+            var resizedContext = resizedCanvas.getContext("2d");
+            var width = video.videoWidth;
+            var height = video.videoHeight;
+            var aScene = document.querySelector("a-scene").components.screenshot.getCanvas("perspective");
+
+            if (width && height) {
+                  //videoのサイズをキャンバスにセット
+                  resizedCanvas.width = width;
+                  resizedCanvas.height = height;
+                  //キャンバスにvideoをコピー
+                  resizedContext.drawImage(video, 0, 0, width, height);
+
+                  //カメラの画角でar側の縮小処理を変える
+                  if (width > height) {
+                     // 横長（PC)
+                     resizedContext.drawImage(aScene, 0, 0, width, height);
+                  } else {
+                     // 縦長（スマホ）
+                     var scale = height / width;
+                     var scaledWidth = height * scale;
+                     var marginLeft = (width - scaledWidth) / 2;
+                     resizedContext.drawImage(aScene, marginLeft, 0, scaledWidth, height);
+                  }
+                  return resizedCanvas.toDataURL('image/png');
+            }
+         }
+
+         //-->
