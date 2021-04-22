@@ -42,6 +42,14 @@
     </script>
   </head>
   <body>
+    <div id="loader">
+      <div class="loader-wrapper"><img class="target-img" src="https://genkasaneiwa.github.io/ar-js/somernova/img/marker/marker01.jpg" alt="marker">
+        <p class="loader-para">Please hold the camera up<br>so that the image overlaps the
+          marker.
+        </p>
+      </div>
+      <p class="info-para">Somernova Project by Mieko Murao<br><a class="info-link" href="https://miekomurao.com/" target="_blank">Portfolio</a>|<a class="info-link" href="https://www.instagram.com/mieko.murao/" target="_blank">Instagram</a></p>
+    </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
       <!-- マーカー指定部分 絶対パスでないといけないので注意。https://carnaux.github.io/NFT-Marker-Creator/ で取ってきたファイルの先頭の名前のみ表記する この子要素に表示オブジェクト入れていく 1000pxじゃないとオブジェクトの座標ずれるので注意-->
       <a-nft type="nft" url="https://genkasaneiwa.github.io/ar-js/somernova/img/marker/marker01" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" registerevents>
@@ -88,7 +96,7 @@
     </a-scene>
     <audio class="audio" id="audio" src="https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3" autoplay="autoplay"></audio>
     <button id="share">Share</button><a id="bow-link" href="https://www.bowmarketsomerville.com/" target="_blank"><img src="./img/bow-market-ico.svg"></a>
-    <div class="ui"><img id="snap"><a class="disabled" id="delete-photo" href="#" title="Delete Photo"><i class="material-icons">delete</i></a><a id="take-photo" href="" title="Take Photo"><i class="material-icons">photo_camera</i></a><a class="disabled" id="download-photo" href="#" download="selfie.png" title="Save Photo" target="_blank"><i class="material-icons">file_download</i></a></div>
+    <div class="ui"><img id="snap"><a class="disabled" id="delete-photo" href="#" title="Delete Photo"><i class="material-icons">delete</i></a><a id="take-photo" href="#" title="Take Photo"><i class="material-icons">photo_camera</i></a><a class="disabled" id="download-photo" href="#" download="selfie.png" title="Save Photo" target="_blank"><i class="material-icons">file_download</i></a></div>
     <style>
        body {
        font-family: helvetica, arial, sans-serif;
