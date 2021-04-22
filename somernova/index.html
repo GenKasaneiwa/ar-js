@@ -27,7 +27,7 @@
       // マーカーを検出したイベントの登録
       marker.addEventListener("markerFound", function () {
       var markerId = marker.id;
-      audio.play(); // 音声再生
+      //- audio.play(); // 音声再生
       //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
       loader.style.display = "none";
       //- btn_group.style.display = "block";
@@ -36,7 +36,7 @@
       // マーカーを見失ったイベントの登録
       marker.addEventListener("markerLost", function () {
       var markerId = marker.id;
-      audio.pause(); // 音声停止
+      //- audio.pause(); // 音声停止
       loader.style.display = "flex";
       //- btn_group.style.display = "none";
       });
@@ -293,18 +293,18 @@
       //safariのaudio/videoミュート対策
       //- var audio = document.querySelector("#audio");
       //- var button = document.querySelector("#close");
-      //- var modal = document.querySelector("#loader");
+      var modal = document.querySelector("#loader");
       
-      //- button.addEventListener("touchstart", () => {
+      button.addEventListener("touchstart", () => {
       //- audio.muted = true; // ミュート有効
       //- audio.play(); // 動画再生
       //- audio.pause(); // 動画停止
       //- audio.muted = false; // ミュート無効
       //- audio.currentTime = 0; // 開始秒数を戻す
-      //- modal.style.display = "none"; //modal非表示
+      modal.style.display = "none"; //modal非表示
       //- shareButton.style.display = "block"; //shareボタン表示
       //- linkButton.style.display = "block"; //linkボタン表示
-      //- });
+      });
       
       
       var image = document.querySelector('#snap');
