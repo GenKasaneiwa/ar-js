@@ -100,7 +100,7 @@ html(lang='en')
          img#snap
          a#delete-photo.disabled(href='#' title='Delete Photo')
             i.material-icons delete
-         a#take-photo(href='#' title='Take Photo')
+         a#take-photo(href='' title='Take Photo')
             i.material-icons photo_camera
          a#download-photo.disabled(href='#' download='selfie.png' title='Save Photo' target='_blank')
             i.material-icons file_download
@@ -356,6 +356,8 @@ html(lang='en')
             e.preventDefault();
             var video = document.querySelector('video');
             var snap = takeSnapshot(video);
+
+            alert('test');
 
             //スナップショット表示.
             image.setAttribute('src', snap);
