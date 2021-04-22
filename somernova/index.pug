@@ -22,6 +22,7 @@ html(lang='en')
          init: function () {
          var marker = this.el;
          var loader = document.getElementById("loader");
+         var btn_group = document.getElementById("btn-group")
          
          // マーカーを検出したイベントの登録
          marker.addEventListener("markerFound", function () {
@@ -29,6 +30,7 @@ html(lang='en')
          audio.play(); // 音声再生
          //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
          loader.style.display = "none";
+         btn_group.style.display = "block";
          });
          
          // マーカーを見失ったイベントの登録
@@ -36,6 +38,7 @@ html(lang='en')
          var markerId = marker.id;
          audio.pause(); // 音声停止
          loader.style.display = "flex";
+         btn_group.style.display = "none";
          });
          },
          });
@@ -92,18 +95,18 @@ html(lang='en')
             a-text#text(position='145 -10 -200' rotation='270 0 0' value='' color='white' width='700' align='center')
             // <a-box position="145 -10 -200" wireframe="true" link="href: https://qiita.com/nonkapibara; title: bowmarket; image: #heart"></a-box>
          a-entity(camera)
-      audio#audio.audio(src='https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3' autoplay='autoplay')
-      button#share Share
-      a#bow-link(href='https://www.bowmarketsomerville.com/' target='_blank')
-         img(src='./img/bow-market-ico.svg')
-      .ui
+      //- audio#audio.audio(src='https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3' autoplay='autoplay')
+      //- button#share Share
+      //- a#bow-link(href='https://www.bowmarketsomerville.com/' target='_blank')
+      //-    img(src='./img/bow-market-ico.svg')
+      .ui#btn-group
          img#snap
          a#delete-photo.disabled(href='#' title='Delete Photo')
             i.material-icons delete
          a#take-photo(href='' title='Take Photo')
             i.material-icons photo_camera
-         a#download-photo.disabled(href='#' download='selfie.png' title='Save Photo' target='_blank')
-            i.material-icons file_download
+         //- a#download-photo.disabled(href='#' download='selfie.png' title='Save Photo' target='_blank')
+         //-    i.material-icons file_download
       style.
          body {
          font-family: helvetica, arial, sans-serif;
@@ -349,7 +352,7 @@ html(lang='en')
          var image = document.querySelector('#snap');
          var take_photo_btn = document.querySelector('#take-photo');
          var delete_photo_btn = document.querySelector('#delete-photo');
-         var download_photo_btn = document.querySelector('#download-photo');
+         //- var download_photo_btn = document.querySelector('#download-photo');
 
          //スナップショットボタン
          take_photo_btn.addEventListener("click", function (e) {
