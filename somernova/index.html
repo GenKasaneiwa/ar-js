@@ -30,7 +30,7 @@
       audio.play(); // 音声再生
       //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
       loader.style.display = "none";
-      btn_group.style.display = "block";
+      //- btn_group.style.display = "block";
       });
       
       // マーカーを見失ったイベントの登録
@@ -38,7 +38,7 @@
       var markerId = marker.id;
       audio.pause(); // 音声停止
       loader.style.display = "flex";
-      btn_group.style.display = "none";
+      //- btn_group.style.display = "none";
       });
       },
       });
@@ -55,7 +55,7 @@
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
       <a-nft type="nft" url="https://genkasaneiwa.github.io/ar-js/somernova/img/marker/marker01" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" registerevents>
-        <a-image src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg" width="51" height="63" scale="1 1 1" position="5 -50 -200" rotation="270 0 0"></a-image>
+        <a-image src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg" width="51" height="63" scale="1 1 1" position="50 -50 -100" rotation="270 0 0"></a-image>
         <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="" color="white" width="700" align="center"></a-text>
       </a-nft>
       <a-entity camera></a-entity>
@@ -69,6 +69,7 @@
        width: 100%;
        height: 100vh;
        }
+      
        #loader {
        height: 100%;
        width: 100%;
@@ -160,6 +161,7 @@
        box-sizing: border-box;
        display: none;
        }
+      
       .ui a {
           display: inline-block;
           width: 60px;
