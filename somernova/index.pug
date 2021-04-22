@@ -22,7 +22,7 @@ html(lang='en')
          init: function () {
          var marker = this.el;
          var loader = document.getElementById("loader");
-         var btn_group = document.getElementById("btn-group");
+         //- var btn_group = document.getElementById("btn-group");
          
          // マーカーを検出したイベントの登録
          marker.addEventListener("markerFound", function () {
@@ -85,7 +85,7 @@ html(lang='en')
                <a-link href="https://www.bowmarketsomerville.com/" title="My Homepage">
                </a-link>
             //- z -にすると上に上がる   x +にすると右による   y -にすると近づく？
-            a-image(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='61' height='73' scale='1 1 1' position='80 -50 -100' rotation='270 0 0')
+            a-image(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='61' height='73' scale='1 1 1' position='60 -50 -100' rotation='270 0 0')
             a-text#text(position='145 -10 -200' rotation='270 0 0' value='' color='white' width='700' align='center')
             //- <a-box position="145 -10 -200" wireframe="true" link="href: https://qiita.com/nonkapibara; title: bowmarket; image: #heart"></a-box>
          a-entity(camera)
@@ -239,71 +239,71 @@ html(lang='en')
         }
       script.
          //date 取得
-         var d = new Date();
-         var weekday = new Array(7);
-         weekday[0] = "Sun";
-         weekday[1] = "Mon";
-         weekday[2] = "Tue";
-         weekday[3] = "Wed";
-         weekday[4] = "Thu";
-         weekday[5] = "Fri";
-         weekday[6] = "Sat";
+         //- var d = new Date();
+         //- var weekday = new Array(7);
+         //- weekday[0] = "Sun";
+         //- weekday[1] = "Mon";
+         //- weekday[2] = "Tue";
+         //- weekday[3] = "Wed";
+         //- weekday[4] = "Thu";
+         //- weekday[5] = "Fri";
+         //- weekday[6] = "Sat";
          
-         var day = weekday[d.getDay()];
+         //- var day = weekday[d.getDay()];
          
-         var target_url = document.getElementById("audio");
-         var target_value = document.getElementById("text");
+         //- var target_url = document.getElementById("audio");
+         //- var target_value = document.getElementById("text");
          
-         if (day == "Sun") {
-         target_url.src =
-         "https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3";
-         target_value.setAttribute(
-         "value",
-         "This Week KeyWord is\n#BowMarketSun"
-         );
-         } else if (day == "Mon") {
-         target_url.src =
-         "https://genkasaneiwa.github.io/test/ar1/mp3/sample2.mp3";
-         target_value.setAttribute(
-         "value",
-         "This Week KeyWord is\n#BowMarketMon"
-         );
-         } else if (day == "Tue") {
-         target_url.src =
-         "https://genkasaneiwa.github.io/test/ar1/mp3/sample3.mp3";
-         target_value.setAttribute(
-         "value",
-         "This Week KeyWord is\n#BowMarketTue"
-         );
-         } else if (day == "Wed") {
-         target_url.src =
-         "https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3";
-         target_value.setAttribute(
-         "value",
-         "This Week KeyWord is\n#BowMarketWed"
-         );
-         } else if (day == "Thu") {
-         target_url.src =
-         "https://genkasaneiwa.github.io/test/ar1/mp3/sample2.mp3";
-         target_value.setAttribute(
-         "value",
-         "This Week KeyWord is\n#BowMarketThu"
-         );
-         } else if (day == "Fri") {
-         target_url.src =
-         "https://genkasaneiwa.github.io/test/ar1/mp3/sample3.mp3";
-         target_value.setAttribute(
-         "value",
-         "This Week KeyWord is\n#BowMarketFri"
-         );
-         } else if (day == "Sat") {
-         target_url.src =
-         "https://genkasaneiwa.github.io/test/ar1/mp3/sample2.mp3";
-         target_value.setAttribute(
-         "value",
-         "This Week KeyWord is\n#BowMarketSat"
-         );
-         }
+         //- if (day == "Sun") {
+         //- target_url.src =
+         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3";
+         //- target_value.setAttribute(
+         //- "value",
+         //- "This Week KeyWord is\n#BowMarketSun"
+         //- );
+         //- } else if (day == "Mon") {
+         //- target_url.src =
+         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample2.mp3";
+         //- target_value.setAttribute(
+         //- "value",
+         //- "This Week KeyWord is\n#BowMarketMon"
+         //- );
+         //- } else if (day == "Tue") {
+         //- target_url.src =
+         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample3.mp3";
+         //- target_value.setAttribute(
+         //- "value",
+         //- "This Week KeyWord is\n#BowMarketTue"
+         //- );
+         //- } else if (day == "Wed") {
+         //- target_url.src =
+         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3";
+         //- target_value.setAttribute(
+         //- "value",
+         //- "This Week KeyWord is\n#BowMarketWed"
+         //- );
+         //- } else if (day == "Thu") {
+         //- target_url.src =
+         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample2.mp3";
+         //- target_value.setAttribute(
+         //- "value",
+         //- "This Week KeyWord is\n#BowMarketThu"
+         //- );
+         //- } else if (day == "Fri") {
+         //- target_url.src =
+         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample3.mp3";
+         //- target_value.setAttribute(
+         //- "value",
+         //- "This Week KeyWord is\n#BowMarketFri"
+         //- );
+         //- } else if (day == "Sat") {
+         //- target_url.src =
+         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample2.mp3";
+         //- target_value.setAttribute(
+         //- "value",
+         //- "This Week KeyWord is\n#BowMarketSat"
+         //- );
+         //- }
          
          //Web Share API
          //クリックで動作するボタン
