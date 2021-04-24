@@ -88,6 +88,37 @@ html(lang='en')
             //- a-image(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='150' height='240' scale='1 1 1' position='40 -50 -90' rotation='270 0 0')
             a-image(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='125' height='190' scale='1 1 1' position='80 0 -191' rotation='270 0 0')
             a-text#text(position='145 -10 -200' rotation='270 0 0' value='' color='white' width='700' align='center')
+         
+         a-nft(type='nft' url='https://genkasaneiwa.github.io/ar-js/somernova/img/marker/marker02' smooth='true' smoothCount='10' smoothTolerance='.01' smoothThreshold='5' registerevents)
+            //- objファイル 3d
+               <a-entity
+               obj-model="obj: url(https://genkasaneiwa.github.io/test/ar1/img/head3d.obj);
+               mtl: url(https://genkasaneiwa.github.io/test/ar1/img/head3d.obj.mtl)"
+               position="145 -10 -200"
+               rotation="270 0 0"
+               ></a-entity>
+            //- particle
+               <a-entity position="145 -10 -200" particle-system="
+               texture: url(https://genkasaneiwa.github.io/test/ar1/img/star.png);
+               color: #FF0000, #FFFF00;
+               size: 1, 0;
+               velocityValue: 0.001 0.001 0.001;
+               velocitySpread: 0.5 0 0.5;
+               accelerationValue: 0.001 0.001 0.001;
+               accelerationSpread: 0.001 0.001 0.001;
+               rotationAngle: 0;
+               blending: 1;
+               particleCount: 200;
+               maxAge: 5; ">
+               </a-entity>
+            //- 画像
+               <a-link href="https://www.bowmarketsomerville.com/" title="My Homepage">
+               </a-link>
+            //-    x +にすると右による   y +にすると近づく 近づいた方が横にズレにくいっぽい？ z -にすると上に上がる 
+            //- a-image(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='150' height='240' scale='1 1 1' position='40 -50 -90' rotation='270 0 0')
+            a-image(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target02.jpg' width='125' height='190' scale='1 1 1' position='80 0 -191' rotation='270 0 0')
+            a-text#text(position='145 -10 -200' rotation='270 0 0' value='' color='white' width='700' align='center')
+
             //- <a-box position="145 -10 -200" wireframe="true" link="href: https://qiita.com/nonkapibara; title: bowmarket; image: #heart"></a-box>
          a-entity(camera)
       //- audio#audio.audio(src='https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3' autoplay='autoplay')
@@ -249,7 +280,7 @@ html(lang='en')
            display: none!important;
         }
 
-        #text {
+        #test {
            font-size: 13px;
            padding: 1rem 2rem;
            border-radius: 50px;
@@ -371,7 +402,7 @@ html(lang='en')
          var image = document.querySelector('#snap');
          var take_photo_btn = document.querySelector('#take-photo');
          var delete_photo_btn = document.querySelector('#delete-photo');
-         var text = document.querySelector('#text');
+         var text = document.querySelector('#test');
          //- var download_photo_btn = document.querySelector('#download-photo');
 
          var is_show = document.querySelector("is_show");
