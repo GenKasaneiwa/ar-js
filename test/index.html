@@ -59,7 +59,7 @@
             />
             <p class="loader-para">
                Please hold the camera up<br />so that the image overlaps the
-               marker.(更新済み1.5)
+               marker.(更新済み2)
             </p>
          </div>
          <p class="info-para">
@@ -131,19 +131,19 @@
                height="8.4"
                scale="1 1 1"
                position="0 2.6 -30"
-               rotation="270 0 0"
+               rotation="0 0 0"
             ></a-image>
             <a-text
                id="text"
                position="145 -10 -200"
-               rotation="270 0 0"
+               rotation="0 0 0"
                value=""
                color="white"
                width="700"
                align="center"
             ></a-text>
          </a-nft>
-         <a-entity camera position="0 1.69 0"></a-entity>
+         <a-entity camera position="0 0 0" rotation="270 0 0"></a-entity>
       </a-scene>
       <div class="ui" id="btn-group">
          <img id="snap" /><a
@@ -318,109 +318,6 @@
          }
       </style>
       <script>
-         //date 取得
-         //- var d = new Date();
-         //- var weekday = new Array(7);
-         //- weekday[0] = "Sun";
-         //- weekday[1] = "Mon";
-         //- weekday[2] = "Tue";
-         //- weekday[3] = "Wed";
-         //- weekday[4] = "Thu";
-         //- weekday[5] = "Fri";
-         //- weekday[6] = "Sat";
-
-         //- var day = weekday[d.getDay()];
-
-         //- var target_url = document.getElementById("audio");
-         //- var target_value = document.getElementById("text");
-
-         //- if (day == "Sun") {
-         //- target_url.src =
-         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3";
-         //- target_value.setAttribute(
-         //- "value",
-         //- "This Week KeyWord is\n#BowMarketSun"
-         //- );
-         //- } else if (day == "Mon") {
-         //- target_url.src =
-         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample2.mp3";
-         //- target_value.setAttribute(
-         //- "value",
-         //- "This Week KeyWord is\n#BowMarketMon"
-         //- );
-         //- } else if (day == "Tue") {
-         //- target_url.src =
-         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample3.mp3";
-         //- target_value.setAttribute(
-         //- "value",
-         //- "This Week KeyWord is\n#BowMarketTue"
-         //- );
-         //- } else if (day == "Wed") {
-         //- target_url.src =
-         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3";
-         //- target_value.setAttribute(
-         //- "value",
-         //- "This Week KeyWord is\n#BowMarketWed"
-         //- );
-         //- } else if (day == "Thu") {
-         //- target_url.src =
-         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample2.mp3";
-         //- target_value.setAttribute(
-         //- "value",
-         //- "This Week KeyWord is\n#BowMarketThu"
-         //- );
-         //- } else if (day == "Fri") {
-         //- target_url.src =
-         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample3.mp3";
-         //- target_value.setAttribute(
-         //- "value",
-         //- "This Week KeyWord is\n#BowMarketFri"
-         //- );
-         //- } else if (day == "Sat") {
-         //- target_url.src =
-         //- "https://genkasaneiwa.github.io/test/ar1/mp3/sample2.mp3";
-         //- target_value.setAttribute(
-         //- "value",
-         //- "This Week KeyWord is\n#BowMarketSat"
-         //- );
-         //- }
-
-         //Web Share API
-         //クリックで動作するボタン
-         //- var shareButton = document.getElementById("share");
-         //- var linkButton = document.getElementById("bow-link");
-         //- //ボタンクリックで実行
-         //- shareButton.addEventListener("click", share);
-
-         //- function share() {
-         //- //web share apiをサポートしているか否か
-         //- if (navigator.share) {
-         //- navigator.share({
-         //- title: document.querySelector("title").textContent,
-         //- text: document
-         //- .querySelector('meta[name="description"]')
-         //- .getAttribute("content"),
-         //- url: location.href,
-         //- });
-         //- }
-         //- //サポートしていない場合の処理
-         //- else {
-         //- alert("This browser does not support the share function.");
-         //- }
-         //- }
-
-         //safariのaudio/videoミュート対策
-         //- var audio = document.querySelector("#audio");
-         //- var button = document.querySelector("#close");
-
-         //- button.addEventListener("touchstart", () => {
-         //- audio.muted = true; // ミュート有効
-         //- audio.play(); // 動画再生
-         //- audio.pause(); // 動画停止
-         //- audio.muted = false; // ミュート無効
-         //- audio.currentTime = 0; // 開始秒数を戻す
-         //- });
-
          var image = document.querySelector("#snap");
          var take_photo_btn = document.querySelector("#take-photo");
          var delete_photo_btn = document.querySelector("#delete-photo");
