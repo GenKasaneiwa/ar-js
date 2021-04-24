@@ -102,6 +102,7 @@ html(lang='en')
             i.material-icons photo_camera
          //- a#download-photo.disabled(href='#' download='selfie.png' title='Save Photo' target='_blank')
          //-    i.material-icons file_download
+      p#test Tap to Save
       style.
          body {
          font-family: helvetica, arial, sans-serif;
@@ -247,6 +248,20 @@ html(lang='en')
         .is_hidden {
            display: none!important;
         }
+
+        #text {
+           font-size: 3rem;
+           padding: 1rem 2rem;
+           border-radius: 50px;
+           color: #fff;
+           border: 1px solid #fff;
+           display: block;
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translateY(-50%) translateX(-50%);
+           z-index: 9999;
+        }
       script.
          //date 取得
          //- var d = new Date();
@@ -355,6 +370,7 @@ html(lang='en')
          var image = document.querySelector('#snap');
          var take_photo_btn = document.querySelector('#take-photo');
          var delete_photo_btn = document.querySelector('#delete-photo');
+         var text = document.querySelector('#text');
          //- var download_photo_btn = document.querySelector('#download-photo');
 
          var is_show = document.querySelector("is_show");
@@ -371,6 +387,7 @@ html(lang='en')
             //スナップショット表示.
             image.setAttribute('src', snap);
             image.classList.add('visible');
+            text.classList.add('is_show');
 
             // 削除ボタンと保存ボタン有効
             delete_photo_btn.classList.remove("disabled");
@@ -393,6 +410,7 @@ html(lang='en')
             // スナップショットを隠す
             image.setAttribute('src', "");
             image.classList.remove("visible");
+            text.classList.remove('is_show');
 
             // 削除ボタンと保存ボタン無効
             delete_photo_btn.classList.add("disabled");

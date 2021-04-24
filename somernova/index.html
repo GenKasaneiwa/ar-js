@@ -61,6 +61,7 @@
       <a-entity camera></a-entity>
     </a-scene>
     <div class="ui" id="btn-group"><img id="snap"><a class="disabled" id="delete-photo" href="#" title="Delete Photo"><i class="material-icons">delete</i></a><a id="take-photo" href="" title="Take Photo"><i class="material-icons">photo_camera</i></a></div>
+    <p id="test">Tap to Save</p>
     <style>
        body {
        font-family: helvetica, arial, sans-serif;
@@ -206,6 +207,20 @@
       .is_hidden {
          display: none!important;
       }
+      
+      #text {
+         font-size: 3rem;
+         padding: 1rem 2rem;
+         border-radius: 50px;
+         color: #fff;
+         border: 1px solid #fff;
+         display: block;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translateY(-50%) translateX(-50%);
+         z-index: 9999;
+      }
     </style>
     <script>
       //date 取得
@@ -315,6 +330,7 @@
       var image = document.querySelector('#snap');
       var take_photo_btn = document.querySelector('#take-photo');
       var delete_photo_btn = document.querySelector('#delete-photo');
+      var text = document.querySelector('#text');
       //- var download_photo_btn = document.querySelector('#download-photo');
       
       var is_show = document.querySelector("is_show");
@@ -331,6 +347,7 @@
          //スナップショット表示.
          image.setAttribute('src', snap);
          image.classList.add('visible');
+         text.classList.add('is_show');
       
          // 削除ボタンと保存ボタン有効
          delete_photo_btn.classList.remove("disabled");
@@ -353,6 +370,7 @@
          // スナップショットを隠す
          image.setAttribute('src', "");
          image.classList.remove("visible");
+         text.classList.remove('is_show');
       
          // 削除ボタンと保存ボタン無効
          delete_photo_btn.classList.add("disabled");
