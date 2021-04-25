@@ -291,13 +291,12 @@ html(lang='en')
             "target09.jpg", 
             "target10.jpg", 
          ] ;
-
          // 配列からランダムで値を選択
          var replace_url = arr[ Math.floor( Math.random() * arr.length ) ] ;
          var target_url = document.getElementById("target");
          target_url.setAttribute('src', root + replace_url); 
 
-         alert(root + replace_url);
+         //- alert(root + replace_url);
 
          //date 取得
          //- var d = new Date();
