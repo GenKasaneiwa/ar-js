@@ -8,6 +8,8 @@ html(lang='en')
       meta(http-equiv='Expires' content='0')
       title This is Title for AR test
       meta(name='description' content='This is AR for BOW MARKET TEST')
+      //jquery
+      //- script(src='https://code.jquery.com/jquery-3.6.0.js')
       // materialアイコン
       link(href='//fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
       // ar.js用ファイル
@@ -93,7 +95,7 @@ html(lang='en')
             //- a-image(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='150' height='240' scale='1 1 1' position='40 -50 -90' rotation='270 0 0')
             //- a-image#marker01(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='125' height='190' scale='1 1 1' position='80 0 -191' rotation='270 0 0')
             //- 18 0 -45
-            a-image#marker01(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='30' height='45' scale='1 1 1' position='18 0 -45' rotation='270 0 0')
+            a-image#target(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='30' height='45' scale='1 1 1' position='18 0 -45' rotation='270 0 0')
             //- a-text#text(position='145 -10 -200' rotation='270 0 0' value='' color='white' width='700' align='center')
 
 
@@ -273,6 +275,29 @@ html(lang='en')
            display: none;
         }
       script.
+
+         ///////////////img 取得
+         // 配列
+         var arr = [ 
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg", 
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target02.jpg", 
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target03.jpg", 
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target04.jpg",
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target05.jpg", 
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target06.jpg", 
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target07.jpg", 
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target08.jpg",
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target09.jpg", 
+            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target10.jpg", 
+         ] ;
+
+         // 配列からランダムで値を選択
+         var replace_url = arr[ Math.floor( Math.random() * arr.length ) ] ;
+         var target_url = document.getElementById("target");
+         target_url.setAttribute('src', replace_url); 
+         
+         alert(replace_url);
+
          //date 取得
          //- var d = new Date();
          //- var weekday = new Array(7);

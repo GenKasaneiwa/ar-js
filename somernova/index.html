@@ -8,6 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>This is Title for AR test</title>
     <meta name="description" content="This is AR for BOW MARKET TEST">
+    <!--jquery-->
     <!-- materialアイコン-->
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- ar.js用ファイル-->
@@ -58,7 +59,7 @@
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
       <a-nft type="nft" url="https://genkasaneiwa.github.io/ar-js/somernova/img/marker/marker01" smooth="true" smoothCount="10" smoothTolerance=".01" smoothThreshold="5" registerevents>
-        <a-image id="marker01" src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg" width="30" height="45" scale="1 1 1" position="18 0 -45" rotation="270 0 0"></a-image>
+        <a-image id="target" src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg" width="30" height="45" scale="1 1 1" position="18 0 -45" rotation="270 0 0"></a-image>
       </a-nft>
       <a-entity camera></a-entity>
     </a-scene>
@@ -226,6 +227,28 @@
       }
     </style>
     <script>
+      ///////////////img 取得
+      // 配列
+      var arr = [ 
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg", 
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target02.jpg", 
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target03.jpg", 
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target04.jpg",
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target05.jpg", 
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target06.jpg", 
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target07.jpg", 
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target08.jpg",
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target09.jpg", 
+         "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target10.jpg", 
+      ] ;
+      
+      // 配列からランダムで値を選択
+      var replace_url = arr[ Math.floor( Math.random() * arr.length ) ] ;
+      var target_url = document.getElementById("target");
+      target_url.setAttribute('src', replace_url); 
+      
+      alert(replace_url);
+      
       //date 取得
       //- var d = new Date();
       //- var weekday = new Array(7);
