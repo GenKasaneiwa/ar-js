@@ -55,7 +55,7 @@ html(lang='en')
                | Please hold the camera up
                br
                | so that the image overlaps the
-               | marker.(更新済み2)
+               | marker.(更新済み3)
          p.info-para
             | Somernova Project by Mieko Murao
             br
@@ -276,27 +276,28 @@ html(lang='en')
         }
       script.
 
-         ///////////////img 取得
+         //imgアクセスのたびに変更(ランダム)
          // 配列
+         var root = "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/";
          var arr = [ 
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg", 
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target02.jpg", 
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target03.jpg", 
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target04.jpg",
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target05.jpg", 
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target06.jpg", 
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target07.jpg", 
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target08.jpg",
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target09.jpg", 
-            "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target10.jpg", 
+            "target01.jpg", 
+            "target02.jpg", 
+            "target03.jpg", 
+            "target04.jpg",
+            "target05.jpg", 
+            "target06.jpg", 
+            "target07.jpg", 
+            "target08.jpg",
+            "target09.jpg", 
+            "target10.jpg", 
          ] ;
 
          // 配列からランダムで値を選択
          var replace_url = arr[ Math.floor( Math.random() * arr.length ) ] ;
          var target_url = document.getElementById("target");
-         target_url.setAttribute('src', replace_url); 
-         
-         alert(replace_url);
+         target_url.setAttribute('src', root + replace_url); 
+
+         alert(root + replace_url);
 
          //date 取得
          //- var d = new Date();
