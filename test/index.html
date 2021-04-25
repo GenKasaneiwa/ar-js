@@ -59,7 +59,7 @@
             />
             <p class="loader-para">
                Please hold the camera up<br />so that the image overlaps the
-               marker.(更新済み5)
+               marker.(更新済1)
             </p>
          </div>
          <p class="info-para">
@@ -88,7 +88,7 @@
          embedded
          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
       >
-         <a-nft
+         <!-- <a-nft
             type="nft"
             url="https://genkasaneiwa.github.io/ar-js/somernova/img/marker/marker01"
             smooth="true"
@@ -106,7 +106,20 @@
                position="100 141 0"
                rotation="270 0 0"
             ></a-image>
-         </a-nft>
+         </a-nft> -->
+         <a-marker
+            type="pattern"
+            url="https://genkasaneiwa.github.io/ar-js/test/pattern-marker.patt"
+         >
+            <!-- 赤い立方体を表示 -->
+            <a-box
+               position="0 0.5 0"
+               width="0.5"
+               height="0.5"
+               depth="0.5"
+               color="red"
+            ></a-box>
+         </a-marker>
 
          <a-entity camera></a-entity>
       </a-scene>
