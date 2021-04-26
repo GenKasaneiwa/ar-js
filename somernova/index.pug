@@ -35,10 +35,10 @@ html(lang='en')
          // マーカーを検出したイベントの登録
          marker.addEventListener("markerFound", function () {
          var markerId = marker.id;
-         audio.play(); // 音声再生
          //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
          loader.style.display = "none";
          btn_group.style.display = "block";
+         audio.play(); // 音声再生
 
          document.querySelector('#marker01').style.display = "none";
 
@@ -47,9 +47,9 @@ html(lang='en')
          // マーカーを見失ったイベントの登録
          marker.addEventListener("markerLost", function () {
          var markerId = marker.id;
-         audio.pause(); // 音声停止
          loader.style.display = "flex";
          btn_group.style.display = "none";
+         audio.pause(); // 音声停止
          });
          },
          });
