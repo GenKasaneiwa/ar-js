@@ -92,7 +92,7 @@ html(lang='en')
  
          a-entity(camera)
          
-      //- audio#audio.audio(src='https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3' autoplay='autoplay')
+      audio#audio.audio(src='https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3' autoplay='autoplay')
       //- button#share Share
       //- a#bow-link(href='https://www.bowmarketsomerville.com/' target='_blank')
       //-    img(src='./img/bow-market-ico.svg')
@@ -379,16 +379,16 @@ html(lang='en')
          //- }
          
          //safariのaudio/videoミュート対策
-         //- var audio = document.querySelector("#audio");
-         //- var button = document.querySelector("#close");
+         var audio = document.querySelector("#audio");
+         var button = document.querySelector("#close");
          
-         //- button.addEventListener("touchstart", () => {
-         //- audio.muted = true; // ミュート有効
-         //- audio.play(); // 動画再生
-         //- audio.pause(); // 動画停止
-         //- audio.muted = false; // ミュート無効
-         //- audio.currentTime = 0; // 開始秒数を戻す
-         //- });
+         button.addEventListener("touchstart", () => {
+         audio.muted = true; // ミュート有効
+         audio.play(); // 動画再生
+         audio.pause(); // 動画停止
+         audio.muted = false; // ミュート無効
+         audio.currentTime = 0; // 開始秒数を戻す
+         });
 
 
          var image = document.querySelector('#snap');
