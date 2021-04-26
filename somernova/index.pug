@@ -1,4 +1,6 @@
 doctype html
+-
+   var r = "https://genkasaneiwa.github.io/ar-js/somernova";
 html(lang='en')
    head
       meta(charset='utf-8')
@@ -54,12 +56,12 @@ html(lang='en')
    body
       #loader
          .loader-wrapper
-            img.target-img(src='https://genkasaneiwa.github.io/ar-js/test/img/marker/pattern-marker01.png' alt='marker')
+            img.target-img(src=r+'/img/marker/pattern-marker01.png' alt='marker')
             p.loader-para
                | Please hold the camera up
                br
                | so that the image overlaps the
-               | marker.(更新済み5)
+               | marker.(更新済み10)
          p.info-para
             | Somernova Project by Mieko Murao
             br
@@ -88,12 +90,12 @@ html(lang='en')
             //- a-image#target(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='30' height='45' scale='1 1 1' position='18 0 -45' rotation='270 0 0')
             //- a-image#target(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='30' height='45' scale='1 1 1' position='18 10 -45' rotation='270 0 0')
             //- a-text#text(position='145 -10 -200' rotation='270 0 0' value='' color='white' width='700' align='center')
-         a-marker(type='pattern' url='https://genkasaneiwa.github.io/ar-js/test/img/marker/pattern-marker01.patt' registerevents)
-            a-image#target(src='https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg' width='2' height='3' scale='.89 .89 .89' position='0 .1 0' rotation='270 0 0')
+         a-marker(type='pattern' url=r+'/img/marker/pattern-marker01.patt' registerevents)
+            a-image#target(src=r+'/img/target01/target01.jpg' width='2' height='3' scale='.89 .89 .89' position='0 .1 0' rotation='270 0 0')
  
          a-entity(camera)
          
-      audio#audio.audio(src='https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3' autoplay='autoplay')
+      audio#audio.audio(src=r+'/audio/audio01.mp3' autoplay='autoplay')
       //- button#share Share
       //- a#bow-link(href='https://www.bowmarketsomerville.com/' target='_blank')
       //-    img(src='./img/bow-market-ico.svg')

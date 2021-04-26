@@ -53,20 +53,20 @@
   </head>
   <body>
     <div id="loader">
-      <div class="loader-wrapper"><img class="target-img" src="https://genkasaneiwa.github.io/ar-js/test/img/marker/pattern-marker01.png" alt="marker">
+      <div class="loader-wrapper"><img class="target-img" src="https://genkasaneiwa.github.io/ar-js/somernova/img/marker/pattern-marker01.png" alt="marker">
         <p class="loader-para">Please hold the camera up<br>so that the image overlaps the
-          marker.(更新済み5)
+          marker.(更新済み10)
         </p>
       </div>
       <p class="info-para">Somernova Project by Mieko Murao<br><a class="info-link" href="https://miekomurao.com/" target="_blank">Portfolio</a> | <a class="info-link" href="https://www.instagram.com/mieko.murao/" target="_blank">Instagram</a> | <a class="info-link" href="https://somernova.com/" target="_blank">Somernova</a></p>
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-      <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/test/img/marker/pattern-marker01.patt" registerevents>
+      <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/somernova/img/marker/pattern-marker01.patt" registerevents>
         <a-image id="target" src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg" width="2" height="3" scale=".89 .89 .89" position="0 .1 0" rotation="270 0 0"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
-    <audio class="audio" id="audio" src="https://genkasaneiwa.github.io/test/ar1/mp3/sample1.mp3" autoplay="autoplay"></audio>
+    <audio class="audio" id="audio" src="https://genkasaneiwa.github.io/ar-js/somernova/audio/audio01.mp3" autoplay="autoplay"></audio>
     <div class="ui" id="btn-group"><img id="snap"><a class="disabled" id="delete-photo" href="#" title="Delete Photo"><i class="material-icons">delete</i></a><a id="take-photo" href="" title="Take Photo"><i class="material-icons">photo_camera</i></a></div>
     <p class="note">Long tap to save image</p>
     <style>
