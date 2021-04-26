@@ -54,19 +54,19 @@
     <div id="loader">
       <div class="loader-wrapper"><img class="target-img" src="https://genkasaneiwa.github.io/ar-js/test/img/marker/pattern-marker01.png" alt="marker">
         <p class="loader-para">Please hold the camera up<br>so that the image overlaps the
-          marker.(更新済み1)
+          marker.(更新済み2)
         </p>
       </div>
       <p class="info-para">Somernova Project by Mieko Murao<br><a class="info-link" href="https://miekomurao.com/" target="_blank">Portfolio</a> | <a class="info-link" href="https://www.instagram.com/mieko.murao/" target="_blank">Instagram</a> | <a class="info-link" href="https://somernova.com/" target="_blank">Somernova</a></p>
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
       <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/test/img/marker/pattern-marker01.patt" registerevents>
-        <a-image id="target" src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg" width="2" height="3" scale=".8 .8 .8" position="0 .1 0" rotation="90 0 0"></a-image>
+        <a-image id="target" src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg" width="2" height="3" scale="1 1 1" position="0 .1 0" rotation="270 0 0"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
     <div class="ui" id="btn-group"><img id="snap"><a class="disabled" id="delete-photo" href="#" title="Delete Photo"><i class="material-icons">delete</i></a><a id="take-photo" href="" title="Take Photo"><i class="material-icons">photo_camera</i></a></div>
-    <p id="test">Long Tap Here to Save</p>
+    <p class="note">Long tap to save image</p>
     <style>
        body {
        font-family: helvetica, arial, sans-serif;
@@ -213,10 +213,8 @@
          display: none!important;
       }
       
-      #test {
-         font-size: 13px;
-         padding: 1rem 2rem;
-         border-radius: 50px;
+      .note {
+         font-size: 1px;
          color: #fff;
          border: 1px solid #fff;
          display: block;
