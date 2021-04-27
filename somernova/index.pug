@@ -45,7 +45,7 @@ html(lang='en')
          if(radio[0].checked){
             audio.play(); // onのときのみ音声再生
          }
-         
+
          document.querySelector('#marker01').style.display = "none";
 
          });
@@ -70,9 +70,11 @@ html(lang='en')
                | marker.(更新済み12)
             form()#music-btn
                label
-                  input(type="radio" name="music" value="on") ON 
+                  input(type="radio" name="music" value="on")
+                  | on
                label
-                  input(type="radio" name="music" value="off") OFF
+                  input(type="radio" name="music" value="off")
+                  | off
          p.info-para
             | Somernova Project by Mieko Murao
             br

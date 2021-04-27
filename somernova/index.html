@@ -28,6 +28,7 @@
       var loader = document.getElementById("loader");
       var btn_group = document.getElementById("btn-group");
       var audio = document.getElementById("audio");
+      var radio = document.getElementsByName('music');
       
       // マーカーを検出したイベントの登録
       marker.addEventListener("markerFound", function () {
@@ -35,7 +36,10 @@
       //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
       loader.style.display = "none";
       btn_group.style.display = "block";
-      audio.play(); // 音声再生
+      
+      if(radio[0].checked){
+         audio.play(); // onのときのみ音声再生
+      }
       
       document.querySelector('#marker01').style.display = "none";
       
@@ -58,7 +62,14 @@
         <p class="loader-para">Please hold the camera up<br>so that the image overlaps the
           marker.(更新済み12)
         </p>
-        <button id="button">Music On</button>
+        <form id="music-btn">
+          <label>
+            <input type="radio" name="music" value="on">on
+          </label>
+          <label>
+            <input type="radio" name="music" value="off">off
+          </label>
+        </form>
       </div>
       <p class="info-para">Somernova Project by Mieko Murao<br><a class="info-link" href="https://miekomurao.com/" target="_blank">Portfolio</a> | <a class="info-link" href="https://www.instagram.com/mieko.murao/" target="_blank">Instagram</a> | <a class="info-link" href="https://somernova.com/" target="_blank">Somernova</a></p>
     </div>
@@ -346,7 +357,7 @@
       
       //safariのaudio/videoミュート対策
       var audio = document.querySelector("#audio");
-      var button = document.querySelector("#button");
+      var button = document.querySelector("#music-btn");
       
       button.addEventListener("touchstart", () => {
       audio.muted = true; // ミュート有効
