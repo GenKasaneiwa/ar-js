@@ -146,6 +146,7 @@ html(lang='en')
             color: #fff;
             display: block;
             margin: auto;
+            text-align: center;
          }
 
          .vol-on {
@@ -445,13 +446,12 @@ html(lang='en')
          var off = document.querySelector(".vol-off")
 
          on.addEventListener('click', function (event) {
-	         on.style.display="none";
+            on.style.display="none";
             off.style.display="block";
-            alert('on');
          });
 
          off.addEventListener('click', function (event) {
-             off.style.display="none";
+            off.style.display="none";
             on.style.display="block";
          });
 

@@ -104,6 +104,7 @@
           color: #fff;
           display: block;
           margin: auto;
+          text-align: center;
        }
       
        .vol-on {
@@ -402,13 +403,13 @@
       var on = document.querySelector(".vol-on");
       var off = document.querySelector(".vol-off")
       
-      on.addEventListener("click", () => {
-          on.style.display="none";
+      on.addEventListener('click', function (event) {
+         on.style.display="none";
          off.style.display="block";
       });
       
-       off.addEventListener("click", () => {
-          off.style.display="none";
+      off.addEventListener('click', function (event) {
+         off.style.display="none";
          on.style.display="block";
       });
       
