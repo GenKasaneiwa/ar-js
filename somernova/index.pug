@@ -444,12 +444,12 @@ html(lang='en')
          var on = document.querySelector(".vol-on");
          var off = document.querySelector(".vol-off")
 
-         on.addEventListener("touchstart", () => {
-             on.style.display="none";
+         on.addEventListener('click', function (event) {
+	         on.style.display="none";
             off.style.display="block";
          });
 
-          off.addEventListener("touchstart", () => {
+         off.addEventListener('click', function (event) {
              off.style.display="none";
             on.style.display="block";
          });
