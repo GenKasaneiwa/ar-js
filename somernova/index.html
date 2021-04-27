@@ -75,7 +75,7 @@
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
       <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/somernova/img/marker/pattern-marker01.patt" registerevents>
-        <a-image id="target" src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg" width="2" height="3" scale=".89 .89 .89" position="0 .1 0" rotation="270 0 0"></a-image>
+        <a-image id="target-img" src="https://genkasaneiwa.github.io/ar-js/somernova/img/target01/target01.jpg" width="2" height="3" scale=".89 .89 .89" position="0 .1 0" rotation="270 0 0"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
@@ -244,8 +244,8 @@
     <script>
       //imgアクセスのたびに変更(ランダム)
       // 配列
-      var root = "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/";
-      var arr = [ 
+      var root_img = "https://genkasaneiwa.github.io/ar-js/somernova/img/target01/";
+      var arr_img = [ 
          "target01.jpg", 
          "target02.jpg", 
          "target03.jpg", 
@@ -258,9 +258,24 @@
          "target10.jpg", 
       ] ;
       // 配列からランダムで値を選択
-      var replace_url = arr[ Math.floor( Math.random() * arr.length ) ] ;
-      var target_url = document.getElementById("target");
-      target_url.setAttribute('src', root + replace_url); 
+      var replace_img_url = arr_img[ Math.floor( Math.random() * arr_img.length ) ] ;
+      var target_img_url = document.getElementById("target-img");
+      target_img_url.setAttribute('src', root_img + replace_img_url); 
+      
+      
+      //audioアクセスのたびに変更(ランダム)
+      // 配列
+      var root_audio = "https://genkasaneiwa.github.io/ar-js/somernova/audio/";
+      var arr_audio = [ 
+         "audio01.mp3", 
+         "audio02.mp3", 
+      ] ;
+      // 配列からランダムで値を選択
+      var replace_audio_url = arr_audio[ Math.floor( Math.random() * arr_audio.length ) ] ;
+      var target_audio_url = document.getElementById("audio");
+      target_audio_url.setAttribute('src', root_audio + replace_audio_url); 
+      
+      
       
       //- alert(root + replace_url);
       
