@@ -401,14 +401,17 @@
       //botton on off
       var on = document.querySelector(".vol-on");
       var off = document.querySelector(".vol-off")
-      off.onclick = function(e) {
-         off.style.display="none";
+      
+      on.addEventListener("touchstart", () => {
+          on.style.display="none";
+         off.style.display="block";
+      });
+      
+       off.addEventListener("touchstart", () => {
+          off.style.display="none";
          on.style.display="block";
       });
-      on.onclick = function(e) {
-         on.style.display="none";
-         on.style.display="block";
-      });
+      
       
       
       var image = document.querySelector('#snap');
