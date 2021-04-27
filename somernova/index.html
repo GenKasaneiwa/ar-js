@@ -60,15 +60,13 @@
     <div id="loader">
       <div class="loader-wrapper"><img class="target-img" src="https://genkasaneiwa.github.io/ar-js/somernova/img/marker/pattern-marker01.png" alt="marker">
         <p class="loader-para">Please hold the camera up<br>so that the image overlaps the
-          marker.(更新済み12)
+          marker.(更新済み1)
         </p>
         <form id="music-btn">
-          <label>
-            <input type="radio" name="music" value="on">on
+          <label for="checkbox">
+            <div class="ui" id="btn-group"><i class="material-icons"></i></div>
           </label>
-          <label>
-            <input type="radio" name="music" value="off" checked="checked">off
-          </label>
+          <input type="radio" name="music" value="on" id="checkbox">
         </form>
       </div>
       <p class="info-para">Somernova Project by Mieko Murao<br><a class="info-link" href="https://miekomurao.com/" target="_blank">Portfolio</a> | <a class="info-link" href="https://www.instagram.com/mieko.murao/" target="_blank">Instagram</a> | <a class="info-link" href="https://somernova.com/" target="_blank">Somernova</a></p>
@@ -269,6 +267,7 @@
       var arr_audio = [ 
          "audio01.mp3", 
          "audio02.mp3", 
+         "audio03.mp3", 
       ] ;
       // 配列からランダムで値を選択
       var replace_audio_url = arr_audio[ Math.floor( Math.random() * arr_audio.length ) ] ;

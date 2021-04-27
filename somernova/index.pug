@@ -67,14 +67,12 @@ html(lang='en')
                | Please hold the camera up
                br
                | so that the image overlaps the
-               | marker.(更新済み12)
+               | marker.(更新済み1)
             form()#music-btn
-               label
-                  input(type="radio" name="music" value="on")
-                  | on
-               label
-                  input(type="radio" name="music" value="off" checked="checked")
-                  | off
+               label(for="checkbox")
+                  .ui#btn-group
+                     i.material-icons
+               input(type="radio" name="music" value="on")#checkbox
          p.info-para
             | Somernova Project by Mieko Murao
             br
@@ -309,6 +307,7 @@ html(lang='en')
          var arr_audio = [ 
             "audio01.mp3", 
             "audio02.mp3", 
+            "audio03.mp3", 
          ] ;
          // 配列からランダムで値を選択
          var replace_audio_url = arr_audio[ Math.floor( Math.random() * arr_audio.length ) ] ;
