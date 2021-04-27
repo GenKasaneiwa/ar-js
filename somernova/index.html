@@ -63,7 +63,7 @@
           marker.(更新済み1)
         </p>
         <form id="music-btn">
-          <label class="btn-label" for="checkbox"><i class="material-icons">volume_off</i></label>
+          <label class="btn-label" for="checkbox"><i class="material-icons vol-on">volume_off</i><i class="material-icons vol-off">volume_up</i></label>
           <input type="checkbox" name="music" value="on" id="checkbox">
         </form>
       </div>
@@ -102,6 +102,16 @@
       
        .btn-label {
           color: #fff;
+          display: block;
+          margin: auto;
+       }
+      
+       .vol-on {
+          display: none;
+       }
+      
+       .vol-off {
+          display: block;
        }
        
        .target-img {
@@ -131,6 +141,11 @@
        
        .info-link {
        color: white;
+       }
+      
+       #checkbox {
+          visibility: hidden;
+          opacity: 0;
        }
        
        #share {
@@ -381,6 +396,18 @@
       audio.pause(); // 動画停止
       audio.muted = false; // ミュート無効
       audio.currentTime = 0; // 開始秒数を戻す
+      });
+      
+      //botton on off
+      var on = document.querySelector(".vol-on");
+      var off = document.querySelector(".vol-off")
+      off.onclick = function(e) {
+         off.style.display="none";
+         on.style.display="block";
+      });
+      on.onclick = function(e) {
+         on.style.display="none";
+         on.style.display="block";
       });
       
       
