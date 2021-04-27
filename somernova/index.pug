@@ -8,6 +8,8 @@ html(lang='en')
       meta(http-equiv='Pragma' content='no-cache')
       meta(http-equiv='Cache-Control' content='no-cache')
       meta(http-equiv='Expires' content='0')
+      meta(name='robots' content='noindex')
+      
       title This is Title for AR test
       meta(name='description' content='This is AR for BOW MARKET TEST')
       //jquery
@@ -62,6 +64,7 @@ html(lang='en')
                br
                | so that the image overlaps the
                | marker.(更新済み12)
+            button#button Music On
          p.info-para
             | Somernova Project by Mieko Murao
             br
@@ -383,16 +386,16 @@ html(lang='en')
          //- }
          
          //safariのaudio/videoミュート対策
-         //- var audio = document.querySelector("#audio");
-         //- var button = document.querySelector("#close");
+         var audio = document.querySelector("#audio");
+         var button = document.querySelector("#button");
          
-         //- button.addEventListener("touchstart", () => {
-         //- audio.muted = true; // ミュート有効
-         //- audio.play(); // 動画再生
-         //- audio.pause(); // 動画停止
-         //- audio.muted = false; // ミュート無効
-         //- audio.currentTime = 0; // 開始秒数を戻す
-         //- });
+         button.addEventListener("touchstart", () => {
+         audio.muted = true; // ミュート有効
+         audio.play(); // 動画再生
+         audio.pause(); // 動画停止
+         audio.muted = false; // ミュート無効
+         audio.currentTime = 0; // 開始秒数を戻す
+         });
 
 
          var image = document.querySelector('#snap');
