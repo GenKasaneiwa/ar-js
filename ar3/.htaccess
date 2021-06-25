@@ -1,0 +1,5 @@
+#キャッシュさせない
+<Files ~ “\.(html|php|jpe?g|gif|png|pdf)$”>
+  Header set Pragma no-cache
+  Header set Cache-Control no-cache
+</Files>
