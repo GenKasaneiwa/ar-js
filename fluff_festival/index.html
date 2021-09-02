@@ -94,7 +94,7 @@
             </a-image>
          </a-marker> -->
 
-         <!--画像用-->
+         <!--画像用 https://carnaux.github.io/NFT-Marker-Creator/#/ -->
          <a-nft
             type="nft"
             url="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker/marker"
@@ -105,9 +105,11 @@
             registerevents
          >
             
-            <!-- z -にすると上に上がる
+            <!-- 
+            z -にすると上に上がる
             x +にすると右による
-            y -にすると近づく -->
+            y -にすると近づく 
+            -->
             
             <a-image
                src="https://genkasaneiwa.github.io/ar-js//fluff_festival/assets/img/marker.jpg"
@@ -132,35 +134,35 @@
 
       <script>
          //infoクローズボタン
-         $(".js-close").on('click', function() {
-               $('.info__box, .js-close').slideToggle(200);
-               $('.js-open').fadeIn(100);
-         }); 
-         $(".js-open").on('click', function() {
-               $('.js-open').fadeOut(100);
-               $('.info__box, .js-close').slideToggle(200);
+         // $(".js-close").on('click', function() {
+         //       $('.info__box, .js-close').slideToggle(200);
+         //       $('.js-open').fadeIn(100);
+         // }); 
+         // $(".js-open").on('click', function() {
+         //       $('.js-open').fadeOut(100);
+         //       $('.info__box, .js-close').slideToggle(200);
    
                
-         }); 
+         // }); 
          
-         $(function() {
-            mw('#open-modal1', '#open-modal1', '.modal-trigger1', '#close');
-            /*
-            mw(モーダル全体, モーダルのメインコンテンツ, 開くボタン , 閉じるボタン );
-            */
-         });
+         // $(function() {
+         //    mw('#open-modal1', '#open-modal1', '.modal-trigger1', '#close');
+         //    /*
+         //    mw(モーダル全体, モーダルのメインコンテンツ, 開くボタン , 閉じるボタン );
+         //    */
+         // });
 
-         function mw(modal, modalContent, btnOpen, btnClose) {
-            $(btnOpen).on('click', function() {
-               $(modal).fadeIn();
-            });
-            $(modal).on('click', function(event) {
-               if (!($(event.target).closest($(modalContent)).length) || ($(event.target).closest($(btnClose))
-                     .length)) {
-                  $(modal).fadeOut();
-               }
-            });
-         }
+         // function mw(modal, modalContent, btnOpen, btnClose) {
+         //    $(btnOpen).on('click', function() {
+         //       $(modal).fadeIn();
+         //    });
+         //    $(modal).on('click', function(event) {
+         //       if (!($(event.target).closest($(modalContent)).length) || ($(event.target).closest($(btnClose))
+         //             .length)) {
+         //          $(modal).fadeOut();
+         //       }
+         //    });
+         // }
 
 
          //Web Share API
