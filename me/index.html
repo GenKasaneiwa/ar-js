@@ -94,6 +94,11 @@
             </a-image>
          </a-marker> -->
 
+         <a-assets>
+           <!-- 3Dモデルをプリロード -->
+           <a-asset-item id="test" src="https://genkasaneiwa.github.io/ar-js/me/assets/img/me.glb"></a-asset-item>
+         </a-assets>
+
          <!--画像用 https://carnaux.github.io/NFT-Marker-Creator/#/ -->
          <a-nft
             type="nft"
@@ -121,7 +126,7 @@
             ></a-entity> -->
 
             <!-- gltf or glb ファイル 3d-->
-            <a-entity gltf-model="https://genkasaneiwa.github.io/ar-js/me/assets/img/me.glb"
+            <a-entity gltf-model="#test"
             rotation="0 180 0" position="0 0.5 0" scale="0.8 0.8 0.8"
             animation-mixer>
             </a-entity>
