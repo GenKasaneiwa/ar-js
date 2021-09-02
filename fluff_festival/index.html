@@ -50,7 +50,6 @@
                   //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
                   loader.style.display = "none";
                   // ar_show.style.display = "block";
-                  alert('hoge');
 
                   // if (flag.classList.contains('js-on')) {
                   //    audio.play(); // onのときのみ音声再生
@@ -83,6 +82,8 @@
 
       <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+
+         <!--マーカー用-->
          <!-- <a-marker type="pattern" url=".patt" registerevents>
             <a-image id="target" src="" 
                height="2" 
@@ -92,6 +93,8 @@
                rotation="270 0 0">
             </a-image>
          </a-marker> -->
+
+         <!--画像用-->
          <a-nft
             type="nft"
             url="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker/marker"
@@ -102,9 +105,9 @@
             registerevents
          >
             
-               <!-- z -にすると上に上がる
-               x +にすると右による
-               y -にすると近づく -->
+            <!-- z -にすると上に上がる
+            x +にすると右による
+            y -にすると近づく -->
             
             <a-image
                src="https://genkasaneiwa.github.io/ar-js//fluff_festival/assets/img/marker.jpg"
