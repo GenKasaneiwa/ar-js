@@ -50,6 +50,7 @@
                   //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
                   loader.style.display = "none";
                   ar_show.style.display = "block";
+                  alert('hoge');
 
                   if (flag.classList.contains('js-on')) {
                      audio.play(); // onのときのみ音声再生
@@ -72,7 +73,7 @@
    <body>
       <div id="loader" class="loader">
          <div class="loader__wrapper">
-            <p class="loader__para">please hold your phone up to the qr code
+            <p class="loader__para">please hold your phone up to the image
             </p>
             <img class="loader__img" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker.jpg" alt="marker">
             <!-- <p class="loader__para">*music will start as soon as the marker matches</p> -->
@@ -184,123 +185,123 @@
          //- }
 
          //safariのaudio/videoミュート対策
-         var audio = document.querySelector("#audio");
-         var button = document.querySelector("#music-btn");
+         // var audio = document.querySelector("#audio");
+         // var button = document.querySelector("#music-btn");
 
-         button.addEventListener("touchstart", () => {
-            audio.muted = true; // ミュート有効
-            audio.play(); // 動画再生
-            audio.pause(); // 動画停止
-            audio.muted = false; // ミュート無効
-            audio.currentTime = 0; // 開始秒数を戻す
-         });
+         // button.addEventListener("touchstart", () => {
+         //    audio.muted = true; // ミュート有効
+         //    audio.play(); // 動画再生
+         //    audio.pause(); // 動画停止
+         //    audio.muted = false; // ミュート無効
+         //    audio.currentTime = 0; // 開始秒数を戻す
+         // });
 
          //botton on off
-         var on = document.querySelector(".vol-on");
-         var off = document.querySelector(".vol-off")
+         // var on = document.querySelector(".vol-on");
+         // var off = document.querySelector(".vol-off")
 
-         document.addEventListener('DOMContentLoaded', function() {
-            on.style.display = "none";
-         });
+         // document.addEventListener('DOMContentLoaded', function() {
+         //    on.style.display = "none";
+         // });
 
-         on.addEventListener('click', function(event) {
-            on.style.display = "none";
-            off.style.display = "inline-block";
-            on.classList.remove("js-on");
-            audio.pause();
-         });
+         // on.addEventListener('click', function(event) {
+         //    on.style.display = "none";
+         //    off.style.display = "inline-block";
+         //    on.classList.remove("js-on");
+         //    audio.pause();
+         // });
 
-         off.addEventListener('click', function(event) {
-            off.style.display = "none";
-            on.style.display = "inline-block";
-            on.classList.add("js-on");
-            audio.play();
-         });
+         // off.addEventListener('click', function(event) {
+         //    off.style.display = "none";
+         //    on.style.display = "inline-block";
+         //    on.classList.add("js-on");
+         //    audio.play();
+         // });
 
-         var image = document.querySelector('#snap');
-         var take_photo_btn = document.querySelector('#take-photo');
-         var delete_photo_btn = document.querySelector('#delete-photo');
-         var text = document.querySelector('.note');
-         //- var download_photo_btn = document.querySelector('#download-photo');
+         // var image = document.querySelector('#snap');
+         // var take_photo_btn = document.querySelector('#take-photo');
+         // var delete_photo_btn = document.querySelector('#delete-photo');
+         // var text = document.querySelector('.note');
+         // //- var download_photo_btn = document.querySelector('#download-photo');
 
-         var is_show = document.querySelector("is_show");
-         var is_hidden = document.querySelector("is_hidden");
-         var target1 = document.getElementById("btn-group");
-         var target2 = document.getElementById("loader");
+         // var is_show = document.querySelector("is_show");
+         // var is_hidden = document.querySelector("is_hidden");
+         // var target1 = document.getElementById("btn-group");
+         // var target2 = document.getElementById("loader");
 
-         //スナップショットボタン
-         take_photo_btn.addEventListener("click", function(e) {
-            e.preventDefault();
-            var video = document.querySelector('video');
-            var snap = takeSnapshot(video);
+         // //スナップショットボタン
+         // take_photo_btn.addEventListener("click", function(e) {
+         //    e.preventDefault();
+         //    var video = document.querySelector('video');
+         //    var snap = takeSnapshot(video);
 
-            //スナップショット表示.
-            image.setAttribute('src', snap);
-            image.parentElement.classList.add('visible');
-            text.classList.add('is_show');
+         //    //スナップショット表示.
+         //    image.setAttribute('src', snap);
+         //    image.parentElement.classList.add('visible');
+         //    text.classList.add('is_show');
 
-            // 削除ボタンと保存ボタン有効
-            delete_photo_btn.classList.remove("disabled");
-            //- download_photo_btn.classList.remove("disabled");
+         //    // 削除ボタンと保存ボタン有効
+         //    delete_photo_btn.classList.remove("disabled");
+         //    //- download_photo_btn.classList.remove("disabled");
 
-            // 保存ボタンにスナップショットを渡す
-            //- download_photo_btn.href = snap;
+         //    // 保存ボタンにスナップショットを渡す
+         //    //- download_photo_btn.href = snap;
 
-            // スナップショットが隠れないように表示を保持
-            target1.classList.add('is_show');
-            target2.classList.add('is_hidden');
+         //    // スナップショットが隠れないように表示を保持
+         //    target1.classList.add('is_show');
+         //    target2.classList.add('is_hidden');
 
-         });
+         // });
 
-         //削除ボタン
-         delete_photo_btn.addEventListener("click", function(e) {
+         // //削除ボタン
+         // delete_photo_btn.addEventListener("click", function(e) {
 
-            e.preventDefault();
+         //    e.preventDefault();
 
-            // スナップショットを隠す
-            image.setAttribute('src', "");
-            image.parentElement.classList.remove("visible");
-            text.classList.remove('is_show');
+         //    // スナップショットを隠す
+         //    image.setAttribute('src', "");
+         //    image.parentElement.classList.remove("visible");
+         //    text.classList.remove('is_show');
 
-            // 削除ボタンと保存ボタン無効
-            delete_photo_btn.classList.add("disabled");
-            //- download_photo_btn.classList.add("disabled");
+         //    // 削除ボタンと保存ボタン無効
+         //    delete_photo_btn.classList.add("disabled");
+         //    //- download_photo_btn.classList.add("disabled");
 
-            // スナップショットが隠す
-            target1.classList.remove('is_show');
-            target2.classList.remove('is_hidden');
+         //    // スナップショットが隠す
+         //    target1.classList.remove('is_show');
+         //    target2.classList.remove('is_hidden');
 
-         });
+         // });
 
          //スナップショットを撮る
-         function takeSnapshot(video) {
-            var resizedCanvas = document.createElement("canvas");
-            var resizedContext = resizedCanvas.getContext("2d");
-            var width = video.videoWidth;
-            var height = video.videoHeight;
-            var aScene = document.querySelector("a-scene").components.screenshot.getCanvas("perspective");
+         // function takeSnapshot(video) {
+         //    var resizedCanvas = document.createElement("canvas");
+         //    var resizedContext = resizedCanvas.getContext("2d");
+         //    var width = video.videoWidth;
+         //    var height = video.videoHeight;
+         //    var aScene = document.querySelector("a-scene").components.screenshot.getCanvas("perspective");
 
-            if (width && height) {
-               //videoのサイズをキャンバスにセット
-               resizedCanvas.width = width;
-               resizedCanvas.height = height;
-               //キャンバスにvideoをコピー
-               resizedContext.drawImage(video, 0, 0, width, height);
+         //    if (width && height) {
+         //       //videoのサイズをキャンバスにセット
+         //       resizedCanvas.width = width;
+         //       resizedCanvas.height = height;
+         //       //キャンバスにvideoをコピー
+         //       resizedContext.drawImage(video, 0, 0, width, height);
 
-               //カメラの画角でar側の縮小処理を変える
-               if (width > height) {
-                  // 横長（PC)
-                  resizedContext.drawImage(aScene, 0, 0, width, height);
-               } else {
-                  // 縦長（スマホ）
-                  var scale = height / width;
-                  var scaledWidth = height * scale;
-                  var marginLeft = (width - scaledWidth) / 2;
-                  resizedContext.drawImage(aScene, marginLeft, 0, scaledWidth, height);
-               }
-               return resizedCanvas.toDataURL('image/png');
-            }
-         }
+         //       //カメラの画角でar側の縮小処理を変える
+         //       if (width > height) {
+         //          // 横長（PC)
+         //          resizedContext.drawImage(aScene, 0, 0, width, height);
+         //       } else {
+         //          // 縦長（スマホ）
+         //          var scale = height / width;
+         //          var scaledWidth = height * scale;
+         //          var marginLeft = (width - scaledWidth) / 2;
+         //          resizedContext.drawImage(aScene, marginLeft, 0, scaledWidth, height);
+         //       }
+         //       return resizedCanvas.toDataURL('image/png');
+         //    }
+         // }
       </script>
    </body>
 </html>
