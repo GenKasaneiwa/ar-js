@@ -40,21 +40,21 @@
             init: function() {
                var marker = this.el;
                var loader = document.getElementById("loader");
-               var ar_show = document.getElementById("ar-show");
-               var audio = document.getElementById("audio");
-               var flag = document.querySelector('.vol-on');
+               // var ar_show = document.getElementById("ar-show");
+               // var audio = document.getElementById("audio");
+               // var flag = document.querySelector('.vol-on');
 
                // マーカーを検出したイベントの登録
                marker.addEventListener("markerFound", function() {
                   var markerId = marker.id;
                   //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
                   loader.style.display = "none";
-                  ar_show.style.display = "block";
+                  // ar_show.style.display = "block";
                   alert('hoge');
 
-                  if (flag.classList.contains('js-on')) {
-                     audio.play(); // onのときのみ音声再生
-                  }
+                  // if (flag.classList.contains('js-on')) {
+                  //    audio.play(); // onのときのみ音声再生
+                  // }
 
                });
 
@@ -62,8 +62,8 @@
                marker.addEventListener("markerLost", function() {
                   var markerId = marker.id;
                   loader.style.display = "flex";
-                  ar_show.style.display = "none";
-                  audio.pause(); // 音声停止
+                  // ar_show.style.display = "none";
+                  // audio.pause(); // 音声停止
                });
             },
          });
@@ -124,8 +124,8 @@
          <a-entity camera></a-entity>
       </a-scene>
 
-      <audio class="audio" id="audio" src="<?= h($audio_url); ?>"
-         autoplay="autoplay"></audio>
+      <!-- <audio class="audio" id="audio" src="<?= h($audio_url); ?>"
+         autoplay="autoplay"></audio> -->
 
       <script>
          //infoクローズボタン
