@@ -81,7 +81,7 @@
          <!-- <a class="loader__link" href="https://somernova.com/" target="_blank">Somernova art project</a> -->
       </div>
 
-      <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+      <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true; gammaOutput: true;" embedded
          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
          <!--マーカー用-->
@@ -128,7 +128,9 @@
 
             <!-- gltf or glb ファイル 3d-->
             <a-entity gltf-model="#test"
-            rotation="0 180 0" position="0 0.5 0" scale="100 100 100"
+            scale="0.15 0.15 0.15" 
+            position="0 0 0"
+            rotation="-50 0 0"
             animation-mixer>
             </a-entity>
             
@@ -142,7 +144,8 @@
                >
             </a-image> -->
 
-            <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="" color="white" width="700" align="center"></a-text>
+            <!-- <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="" color="white" width="700" align="center"></a-text> -->
+            <a-light type="ambient" color="#ffffff"></a-light>
 
          </a-nft>
 
