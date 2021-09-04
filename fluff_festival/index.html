@@ -99,10 +99,11 @@
 
             <a-entity   
                scale="5 5 5"
-               position="0 -3 7"
+               position="0 2 5"
                rotation="200 0 0"
-               gltf-model="#fluff" >
-               <a-animation attribute="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
+               gltf-model="#fluff" 
+               animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+               >
             </a-entity>
          
 
