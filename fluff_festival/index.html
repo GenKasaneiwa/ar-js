@@ -72,7 +72,7 @@
    <body>
       <div id="loader" class="loader">
          <div class="loader__wrapper">
-            <p class="loader__para">please hold your phone up to the marker1
+            <p class="loader__para">please hold your phone up to the marker
             </p>
             <img class="loader__img" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker.png" alt="marker">
             <!-- <p class="loader__para">*music will start as soon as the marker matches</p> -->
@@ -100,6 +100,14 @@
             <a-entity   
                scale="1 1 1"
                position="0 0.5 0"
+               rotation="0 0 0"
+               gltf-model="#fluff" 
+               animation="property: rotation; to: 0 10000 0; loop: true; dur: 500000;"
+            >
+
+            <a-entity   
+               scale="1 1 1"
+               position="2 0.5 0"
                rotation="0 0 0"
                gltf-model="#fluff" 
                animation="property: rotation; to: 0 10000 0; loop: true; dur: 500000;"
