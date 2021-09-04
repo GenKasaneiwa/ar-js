@@ -83,19 +83,30 @@
       <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
+         <a-assets>
+           <a-asset-item id="test" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/model/gltf/fluff.gltf"></a-asset-item>
+         </a-assets>
+
          <!--マーカー用-->
-         <!-- <a-marker type="pattern" url=".patt" registerevents>
-            <a-image id="target" src="" 
+         <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker/marker.patt" registerevents>
+            <!-- <a-image id="target" src="" 
                height="2" 
                width="3"
                scale="1 1 1"
                position="1 1 1"
                rotation="270 0 0">
-            </a-image>
-         </a-marker> -->
+            </a-image> -->
+
+            <a-entity   
+               scale="1 1 1"
+               position="1 1 1"
+               rotation="270 0 0"
+               gltf-model="#test" >
+            </a-entity>
+         
 
          <!--画像用 https://carnaux.github.io/NFT-Marker-Creator/#/ -->
-         <a-nft
+         <!-- <a-nft
             type="nft"
             url="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker/marker"
             smooth="true"
@@ -103,7 +114,9 @@
             smoothTolerance=".01"
             smoothThreshold="5"
             registerevents
-         >
+         > -->
+
+         
             
             <!-- 
             z -にすると上に上がる
@@ -111,7 +124,7 @@
             y -にすると近づく 
             -->
             
-            <a-image
+            <!-- <a-image
                src="https://genkasaneiwa.github.io/ar-js//fluff_festival/assets/img/marker.jpg"
                width="300"
                height="300"
@@ -119,11 +132,13 @@
                position="145 -10 -200"
                rotation="270 0 0"
                >
-            </a-image>
+            </a-image> -->
 
-            <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="" color="white" width="700" align="center"></a-text>
+            <!-- <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="" color="white" width="700" align="center"></a-text> -->
 
-         </a-nft>
+
+         <!-- </a-nft> -->
+      </a-marker>
 
          
          <a-entity camera></a-entity>
