@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title><?= $title ?></title>
-  <meta name="description" content="<?= $settings['description'] ?>">
-  <link href="https://genkasaneiwa.github.io/ar-js/hoge/assets/css/ar.css?v=1.1" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <head>
+   <title><?= $title ?></title>
+   <meta name="description" content="<?= $settings['description'] ?>">
+   <link href="https://genkasaneiwa.github.io/ar-js/hoge/assets/css/ar.css?v=1.1" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"> </script>
+   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"> </script>
 
-  <script>
-     AFRAME.registerComponent("registerevents", {
-        init: function() {
-           var marker = this.el;
-           var loader = document.getElementById("loader");
+   <script>
+      AFRAME.registerComponent("registerevents", {
+         init: function() {
+            var marker = this.el;
+            var loader = document.getElementById("loader");
 
-           // マーカーを検出したイベントの登録
-           marker.addEventListener("markerFound", function() {
-              var markerId = marker.id;
-              //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
-              loader.style.display = "none";
-           });
+            // マーカーを検出したイベントの登録
+            marker.addEventListener("markerFound", function() {
+               var markerId = marker.id;
+               //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
+               loader.style.display = "none";
+            });
 
-           // マーカーを見失ったイベントの登録
-           marker.addEventListener("markerLost", function() {
-              var markerId = marker.id;
-              loader.style.display = "flex";
-           });
-        },
-     });
-  </script>
+            // マーカーを見失ったイベントの登録
+            marker.addEventListener("markerLost", function() {
+               var markerId = marker.id;
+               loader.style.display = "flex";
+            });
+         },
+      });
+   </script>
+  </head>
   <body style="margin : 0px; overflow: hidden;">
    <div id="loader" class="loader">
       <div class="loader__wrapper">
@@ -47,10 +49,10 @@
        </a-assets>
       <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/hoge/assets/img/marker/marker.patt">
         <a-entity   
-           position="0 0 5"
+           position="0 0 -5"
            rotation="-90 0 0"
            gltf-model="#fluff"
-           scale="4 4 4"
+           scale="5 5 5"
         >
 
         <!-- 
