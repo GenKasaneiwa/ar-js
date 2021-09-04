@@ -7,8 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"> </script>
+
   <script>
      AFRAME.registerComponent("registerevents", {
         init: function() {
@@ -30,7 +32,7 @@
         },
      });
   </script>
-  <body>
+  <body style="margin : 0px; overflow: hidden;">
    <div id="loader" class="loader">
       <div class="loader__wrapper">
          <p class="loader__para">please hold your phone up to the marker
