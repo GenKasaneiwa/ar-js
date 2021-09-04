@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <title><?= $title ?></title>
+  <meta name="description" content="<?= $settings['description'] ?>">
+  <link href="https://genkasaneiwa.github.io/ar-js/hoge/assets/css/ar.css?v=1.1" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script>
+     AFRAME.registerComponent("registerevents", {
+        init: function() {
+           var marker = this.el;
+           var loader = document.getElementById("loader");
+
+           // マーカーを検出したイベントの登録
+           marker.addEventListener("markerFound", function() {
+              var markerId = marker.id;
+              //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
+              loader.style.display = "none";
+           });
+
+           // マーカーを見失ったイベントの登録
+           marker.addEventListener("markerLost", function() {
+              var markerId = marker.id;
+              loader.style.display = "flex";
+           });
+        },
+     });
+  </script>
   <body style="margin: 0px; overflow: hidden;">
+   <div id="loader" class="loader">
+      <div class="loader__wrapper">
+         <p class="loader__para">please hold your phone up to the marker
+         </p>
+         <img class="loader__img" src="https://genkasaneiwa.github.io/ar-js/hoge/assets/img/marker.png" alt="marker">
+      </div>
+   </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
       <a-assets>
-         <a-asset-item id="fluff" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/model/gltf/fluff.gltf"></a-asset-item>
+         <a-asset-item id="fluff" src="https://genkasaneiwa.github.io/ar-js/hoge/assets/img/model/gltf/fluff.gltf"></a-asset-item>
        </a-assets>
-      <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker/marker.patt">
+      <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/hoge/assets/img/marker/marker.patt">
         <a-entity   
            position="0 0 0"
            rotation="-90 0 0"
