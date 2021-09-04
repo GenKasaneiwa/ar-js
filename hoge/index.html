@@ -43,11 +43,17 @@
       <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/hoge/assets/img/marker/marker.patt">
         <a-entity   
            position="0 0 0"
-           rotation="-90 0 0"
+           rotation="-90 0 5"
            gltf-model="#fluff"
-           scale="2 2 2"
+           scale="3 3 3"
            animation="property: rotation; to: 0 10000 0; loop: true; dur: 500000;"
         >
+
+        <!-- 
+        x +にすると右による
+        y -にすると近づく 
+        z -にすると上に上がる
+        -->
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
