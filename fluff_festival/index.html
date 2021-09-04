@@ -80,7 +80,8 @@
          <!-- <a class="loader__link" href="https://somernova.com/" target="_blank">Somernova art project</a> -->
       </div>
 
-      <a-scene embedded arjs="debugUIEnabled:false;">
+      <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
          <a-assets>
            <a-asset-item id="fluff" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/model/gltf/fluff.gltf"></a-asset-item>
