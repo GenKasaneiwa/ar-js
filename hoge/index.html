@@ -20,11 +20,13 @@
    <script>
       AFRAME.registerComponent("registerevents", {
          init: function() {
+            alert('init');
             var marker = this.el;
             var loader = document.getElementById("loader");
 
             // マーカーを検出したイベントの登録
             marker.addEventListener("markerFound", function() {
+               alert('evnt');
                var markerId = marker.id;
                //animation start方法 https://qiita.com/1pp0/items/059d5e5936ca5196f7e4
                loader.style.display = "none";
