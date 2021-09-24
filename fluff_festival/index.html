@@ -74,12 +74,11 @@
    <body>
       <div class="popup">
          <div class="popup__wrapper">
-            <p class="popup__para">please hold your phone up to the marker1
+            <img class="popup__img" src="./assets/img/iphone-ico.png" alt="marker">
+            <p class="popup__para">Please allow the use of camera.<br>
             </p>
-            <img class="loader__img" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker.png" alt="marker">
-            <!-- <p class="loader__para">*music will start as soon as the marker matches</p> -->
+            <div class="popup__btn js-submit">OK</div>
          </div>
-         <!-- <a class="loader__link" href="https://somernova.com/" target="_blank">Somernova art project</a> -->
       </div>
 
 
@@ -219,16 +218,16 @@
          //- }
 
          //safariのaudio/videoミュート対策
-         // var audio = document.querySelector("#audio");
-         // var button = document.querySelector("#music-btn");
+         var audio = document.querySelector("#video");
+         var button = document.querySelector("#video-btn");
 
-         // button.addEventListener("touchstart", () => {
-         //    audio.muted = true; // ミュート有効
-         //    audio.play(); // 動画再生
-         //    audio.pause(); // 動画停止
-         //    audio.muted = false; // ミュート無効
-         //    audio.currentTime = 0; // 開始秒数を戻す
-         // });
+         button.addEventListener("touchstart", () => {
+            audio.muted = true; // ミュート有効
+            audio.play(); // 動画再生
+            audio.pause(); // 動画停止
+            audio.muted = false; // ミュート無効
+            audio.currentTime = 0; // 開始秒数を戻す
+         });
 
          //botton on off
          // var on = document.querySelector(".vol-on");
