@@ -14,7 +14,7 @@
       <title><?= $title ?></title>
       <meta name="description" content="<?= $settings['description'] ?>">
 
-      <link href="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/css/ar.css?v=1.1" rel="stylesheet">
+      <link href="./assets/css/ar.css?v=1.2" rel="stylesheet">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap"
          rel="stylesheet">
@@ -72,6 +72,17 @@
    </head>
 
    <body>
+      <div class="popup">
+         <div class="popup__wrapper">
+            <p class="popup__para">please hold your phone up to the marker1
+            </p>
+            <img class="loader__img" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker.png" alt="marker">
+            <!-- <p class="loader__para">*music will start as soon as the marker matches</p> -->
+         </div>
+         <!-- <a class="loader__link" href="https://somernova.com/" target="_blank">Somernova art project</a> -->
+      </div>
+
+
       <div id="loader" class="loader">
          <div class="loader__wrapper">
             <p class="loader__para">please hold your phone up to the marker1
