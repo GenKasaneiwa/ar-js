@@ -24,12 +24,12 @@
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <!-- ar.js用ファイル-->
-      <!-- <script
+      <script
          src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js">
       </script>
       
       <!-- 画像トラック用 マーカー時に入れているとおかしくなる-->
-      <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
+      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
       <!-- マーカートラック用-->
       <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> --> -->
       <!-- クリック用-->
@@ -40,8 +40,8 @@
       <!-- gltfアニメーション用 -->
       <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script> -->
 
-      <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script> -->
+      <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
       <script>
          AFRAME.registerComponent("registerevents", {
             init: function() {
@@ -81,20 +81,19 @@
          <div class="loader__wrapper">
             <p class="loader__para">please hold your phone up to the marker
             </p>
-            <img class="loader__img" src="https://genkasaneiwa.github.io/me/assets/img/marker.png" alt="marker">
+            <img class="loader__img" src="./img/marker.jpg" alt="marker">
             <!-- <p class="loader__para">*music will start as soon as the marker matches</p> -->
          </div>
          <!-- <a class="loader__link" href="https://somernova.com/" target="_blank">Somernova art project</a> -->
       </div>
 
-      <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
-         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+      <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
          <a-assets>
            <!-- <a-asset-item id="me" src="https://genkasaneiwa.github.io/me/assets/img/model/gltf/me.gltf"></a-asset-item> -->
          </a-assets>
          <!-- ライトをいれるとデフォルトからこの設定に書き換わる -->
-         <a-light type="ambient" color="#fff"></a-light>
+         <!-- <a-light type="ambient" color="#fff"></a-light> -->
 
          <!--マーカー用 https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html-->
          <!-- <a-marker type="pattern" url="https://genkasaneiwa.github.io/me/assets/img/marker/marker.patt" registerevents> -->
@@ -136,23 +135,32 @@
             z -にすると上に上がる
             -->
 
-            <!-- <a-image
-               src="https://genkasaneiwa.github.io/ar-js/immersive/assets/img/marker.png"
-               width="500"
-               height="500"
-               scale="2 2 2"
-               position="0 -30 0"
+            <a-image
+               src="https://genkasaneiwa.github.io/ar-js/immersive/assets/img/marker.jpg"
+               width="200"
+               height="200"
+               scale="1 1 1" 
+               position="250 500 -1000"
                rotation="270 0 0"
                >
-            </a-image> -->
+            </a-image>
 
             <a-entity
               gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-              scale="5 5 5"
-              position="50 150 0"
+              scale="5 5 5" 
+              position="250 400 -1000"
+              rotation="270 0 0"
             >
-
-            <!-- <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="" color="white" width="700" align="center">Testです</a-text> -->
+<!-- 
+            <a-text 
+               id="text" 
+               width="700"
+               scale="1 1 1" 
+               position="250 400 -1000"
+               rotation="270 0 0"
+               color="black" 
+               value="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa">
+            </a-text> -->
 
 
          </a-nft>
