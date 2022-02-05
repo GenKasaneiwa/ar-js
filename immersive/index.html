@@ -24,20 +24,24 @@
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <!-- ar.js用ファイル-->
-      <script
+      <!-- <script
          src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js">
       </script>
+      
       <!-- 画像トラック用 マーカー時に入れているとおかしくなる-->
-      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+      <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
       <!-- マーカートラック用-->
-      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+      <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> --> -->
       <!-- クリック用-->
-      <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
-      </script>
+      <!-- <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
+      </script> -->
       <!-- particle用-->
-      <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+      <!-- <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script> -->
       <!-- gltfアニメーション用 -->
-      <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
+      <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script> -->
+
+      <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
       <script>
          AFRAME.registerComponent("registerevents", {
             init: function() {
@@ -132,17 +136,23 @@
             z -にすると上に上がる
             -->
 
-            <a-image
+            <!-- <a-image
                src="https://genkasaneiwa.github.io/ar-js/immersive/assets/img/marker.png"
-               width="300"
-               height="300"
-               scale="1 1 1"
-               position="145 -10 -200"
+               width="500"
+               height="500"
+               scale="2 2 2"
+               position="0 -30 0"
                rotation="270 0 0"
                >
-            </a-image>
+            </a-image> -->
 
-            <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="" color="white" width="700" align="center"></a-text>
+            <a-entity
+              gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+              scale="5 5 5"
+              position="50 150 0"
+            >
+
+            <!-- <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="" color="white" width="700" align="center">Testです</a-text> -->
 
 
          </a-nft>
