@@ -14,7 +14,7 @@
       <title><?= $title ?></title>
       <meta name="description" content="<?= $settings['description'] ?>">
 
-      <link href="https://genkasaneiwa.github.io/ar-js/me/assets/css/ar.css?v=1.1" rel="stylesheet">
+      <link href="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/css/ar.css?v=1.1" rel="stylesheet">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap"
          rel="stylesheet">
@@ -27,9 +27,10 @@
       <script
          src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js">
       </script>
-      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
-      <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
+      <!-- 画像トラック用 マーカー時に入れているとおかしくなる-->
+      <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
+      <!-- マーカートラック用-->
+      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
       <!-- クリック用-->
       <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js">
       </script>
@@ -73,69 +74,62 @@
    <body>
       <div id="loader" class="loader">
          <div class="loader__wrapper">
-            <p class="loader__para">please hold your phone up to the image2
+            <p class="loader__para">please hold your phone up to the marker1
             </p>
-            <img class="loader__img" src="https://genkasaneiwa.github.io/ar-js/me/assets/img/marker.jpg" alt="marker">
+            <img class="loader__img" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker.png" alt="marker">
             <!-- <p class="loader__para">*music will start as soon as the marker matches</p> -->
          </div>
          <!-- <a class="loader__link" href="https://somernova.com/" target="_blank">Somernova art project</a> -->
       </div>
 
-      <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true; gammaOutput: true;" embedded
+      <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
          arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
-         <!--マーカー用-->
-         <!-- <a-marker type="pattern" url=".patt" registerevents>
-            <a-image id="target" src="" 
+         <a-assets>
+           <a-asset-item id="fluff" src="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/model/gltf/fluff.gltf"></a-asset-item>
+         </a-assets>
+
+         <!--マーカー用 https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html-->
+         <a-marker type="pattern" url="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker/marker.patt" registerevents>
+            <!-- <a-image id="target" src="" 
                height="2" 
                width="3"
                scale="1 1 1"
                position="1 1 1"
                rotation="270 0 0">
-            </a-image>
-         </a-marker> -->
+            </a-image> -->
 
-         <a-assets>
-           <!-- 3Dモデルをプリロード -->
-           <a-asset-item id="test" src="https://genkasaneiwa.github.io/ar-js/me/assets/img/me.glb"></a-asset-item>
-         </a-assets>
+            <a-entity   
+               position="0 0 1"
+               rotation="-90 0 0"
+               gltf-model="#fluff"
+               scale="2 2 2"
+            >
+
+            <!-- animation="property: rotation; to: 0 10000 0; loop: true; dur: 500000;" -->
+         
 
          <!--画像用 https://carnaux.github.io/NFT-Marker-Creator/#/ -->
-         <a-nft
+         <!-- <a-nft
             type="nft"
-            url="https://genkasaneiwa.github.io/ar-js/me/assets/img/marker/me"
+            url="https://genkasaneiwa.github.io/ar-js/fluff_festival/assets/img/marker/marker"
             smooth="true"
             smoothCount="10"
             smoothTolerance=".01"
             smoothThreshold="5"
             registerevents
-         >
+         > -->
+
          
             
             <!-- 
-            z -にすると上に上がる
             x +にすると右による
             y -にすると近づく 
+            z -にすると上に上がる
             -->
-
-            <!-- objファイル 3d -->
-            <!-- <a-entity
-            obj-model="obj: url(https://genkasaneiwa.github.io/ar-js/ar3/model/1.obj);
-            mtl: url(https://genkasaneiwa.github.io/ar-js/ar3/model/1.mtl)"
-            position="145 -10 -200"
-            rotation="270 0 0"
-            scale="3 3 3"
-            ></a-entity> -->
-
-            <!-- gltf or glb ファイル 3d-->
-            <!-- <a-entity gltf-model="#test"
-            scale="5 5 5"
-            position="0 0 0"
-            animation-mixer>
-            </a-entity> -->
             
             <!-- <a-image
-               src="https://genkasaneiwa.github.io/ar-js//me/assets/img/marker.jpg"
+               src="https://genkasaneiwa.github.io/ar-js//fluff_festival/assets/img/marker.jpg"
                width="300"
                height="300"
                scale="1 1 1"
@@ -144,11 +138,11 @@
                >
             </a-image> -->
 
-            <a-light type="ambient" color="#ffffff"></a-light>
+            <!-- <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="" color="white" width="700" align="center"></a-text> -->
 
-         </a-nft>
 
-         <a-text id="text" position="145 -10 -200" rotation="270 0 0" value="test" color="white" width="700" align="center"></a-text>
+         <!-- </a-nft> -->
+      </a-marker>
          
          <a-entity camera></a-entity>
       </a-scene>
